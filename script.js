@@ -13,7 +13,10 @@ let days = days[now.getDay()];
 h1.innerHTML= '${day}, ${hours}: ${minutes}';
 
 
-function citySearch(event) {
+function citySearch(response) {
+    console.log(response.data);
+    let temperatureElement= document.querySelector("#temperature");
+    temperatureElement.innerHTML= `$"{response.data.main}`
   event.preventDefault();
   let apiKey = "aa93cf045af7ef6b96d7f0bf356e88c3";
   let units = "metric";
